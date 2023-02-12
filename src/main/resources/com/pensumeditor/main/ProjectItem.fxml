@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="area" onMouseClicked="#onMouseClicked" prefHeight="110.0" prefWidth="127.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pensumeditor.main.ProjectItemController">
+   <children>
+      <Group layoutX="-5.0" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExit">
+         <children>
+            <Label fx:id="nameLabel" alignment="CENTER" layoutX="8.0" layoutY="82.0" prefHeight="25.0" prefWidth="110.0" style="-fx-font-family: ROBOTO; -fx-font-size: 13; -fx-text-fill: #3d3e3b;" />
+            <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#dddad3" height="75.0" layoutX="8.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Label fx:id="previewLabel" alignment="CENTER" layoutX="9.0" layoutY="15.0" prefHeight="56.0" prefWidth="109.0" style="-fx-font-family: ROBOTO; -fx-font-size: 26; -fx-text-fill: 3d3e3b;" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Group>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

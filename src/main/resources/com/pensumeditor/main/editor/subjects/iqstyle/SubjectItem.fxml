@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Group fx:id="grupo" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pensumeditor.main.editor.SubjectItemController">
+   <children>
+      <Rectangle fill="#f3f7f6" height="96.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="128.0" />
+      <Rectangle fx:id="colorRectangle" fill="#e4e4e4" height="135.0" layoutX="128.0" stroke="#3d3e3b" strokeType="OUTSIDE" strokeWidth="0.0" width="48.0" />
+      <Rectangle fill="#002e47" height="37.0" layoutY="98.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="128.0" />
+      <Label fx:id="creditosLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" prefHeight="116.0" prefWidth="48.0" style="-fx-font-weight: Bold; -fx-font-size: 18;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombreLabel" contentDisplay="CENTER" layoutX="17.0" prefHeight="98.0" prefWidth="106.0" style="-fx-font-size: 14; -fx-font-family: Roboto;" textFill="#3d3e3b" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="codigoLabel" contentDisplay="CENTER" layoutX="18.0" layoutY="98.0" prefHeight="37.0" prefWidth="108.0" style="-fx-font-size: 14; -fx-font-weight: Bold;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="compoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="0.0" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="grupoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="0.0" textAlignment="CENTER" textFill="#3d3e3b" visible="false" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Group>

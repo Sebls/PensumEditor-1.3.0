@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: f4f4f4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pensumeditor.main.MainController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="126.0" spacing="30.0" style="-fx-background-color: f4f4f4;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@editor/pensum_editor_icon.png" />
+               </image>
+            </ImageView>
+            <Group fx:id="addProject" onMouseClicked="#newProject" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExit">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/main/new_project_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="59.0" prefHeight="20.0" prefWidth="110.0" style="-fx-font-family: ROBOTO; -fx-font-size: 12; -fx-text-fill: #3d3e3b;" text="Nuevo proyecto" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="-10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Group>
+            <Group fx:id="openProject" onMouseClicked="#openProject" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExit">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/main/open_project_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="61.0" prefHeight="20.0" prefWidth="110.0" style="-fx-font-family: ROBOTO; -fx-font-size: 12; -fx-text-fill: #3d3e3b;" text="Abrir proyecto" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Group>
+            <Pane prefHeight="233.0" prefWidth="130.0" VBox.vgrow="ALWAYS" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="119.0" style="-fx-font-family: ROBOTO; -fx-font-size: 12; -fx-text-fill: #3d3e3b;" text="Versión 1.3" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <VBox prefHeight="400.0" prefWidth="464.0" style="-fx-background-color: f4f4f4;" HBox.hgrow="ALWAYS">
+         <children>
+            <Label prefHeight="25.0" prefWidth="95.0" style="-fx-font-family: ROBOTO; -fx-font-size: 18; -fx-text-fill: #3d3e3b;" text="Bienvenido">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="95.0" style="-fx-font-family: ROBOTO; -fx-font-size: 13; -fx-text-fill: #3d3e3b;" text="Plantillas">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="-15.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="110.0" prefWidth="834.0" vbarPolicy="NEVER">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <content>
+                  <HBox fx:id="ProjectsPanel" prefHeight="110.0" prefWidth="1164.0" />
+               </content>
+            </ScrollPane>
+            <Label prefHeight="25.0" prefWidth="95.0" style="-fx-font-family: ROBOTO; -fx-font-size: 13; -fx-text-fill: #3d3e3b;" text="Recientes">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="267.0" prefWidth="834.0" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: f4f4f4;" />
+               </content>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pensumeditor.main.editor.SubjectSelectorController">
+   <children>
+      <TableView fx:id="SubjectTable" onMouseClicked="#SelectedSubject" prefHeight="353.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="Codigo" prefWidth="67.0" text="Codigo" />
+          <TableColumn fx:id="Nombre" prefWidth="128.0" text="Nombre" />
+            <TableColumn fx:id="Creditos" prefWidth="57.0" text="Creditos" />
+            <TableColumn fx:id="Grupo" prefWidth="121.0" text="Grupo" />
+            <TableColumn fx:id="Prerequisitos" prefWidth="119.0" text="Prerequisitos" />
+            <TableColumn fx:id="Componente" prefWidth="107.0" text="Componente" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TableView>
+      <HBox prefHeight="35.0" prefWidth="651.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="124.0" text="Pensum Editor 1.3" textAlignment="CENTER" />
+            <Pane prefHeight="35.0" prefWidth="267.0" HBox.hgrow="ALWAYS" />
+            <Hyperlink fx:id="addSubjectLink" alignment="CENTER" onAction="#addSubject" prefHeight="35.0" prefWidth="251.0" text="¿Hace falta una asignatura? ¡Agregala aquí!" textAlignment="CENTER" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
