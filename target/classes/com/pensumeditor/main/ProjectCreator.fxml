@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pensumeditor.main.ProjectCreatorController">
+   <children>
+      <HBox prefHeight="79.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="29.0" prefWidth="439.0" style="-fx-font-family: Roboto; -fx-font-size: 24; -fx-font-weight: Bold;" text="Crear proyecto nuevo">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="30.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="200.0" prefWidth="700.0" HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="28.0" fitWidth="26.0" onMouseClicked="#Main" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="25.0" top="30.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../img/main/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </HBox>
+      <Separator prefHeight="0.0" prefWidth="1000.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Separator>
+      <HBox prefHeight="574.0" prefWidth="692.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="582.0" prefWidth="800.0" stylesheets="@editor/PensumEditorStyles.css" HBox.hgrow="ALWAYS">
+               <content>
+                  <AnchorPane prefHeight="1605.0" prefWidth="770.0">
+                     <children>
+                        <Label layoutX="30.0" layoutY="14.0" prefHeight="25.0" prefWidth="314.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Proyecto" />
+                        <Label layoutX="30.0" layoutY="50.0" prefHeight="25.0" prefWidth="314.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Nombre del proyecto" />
+                        <TextField fx:id="name" layoutX="30.0" layoutY="78.0" prefHeight="25.0" prefWidth="314.0" stylesheets="@editor/PensumEditorStyles.css" />
+                        <Label layoutX="30.0" layoutY="109.0" prefHeight="25.0" prefWidth="314.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Autor" />
+                        <TextField fx:id="author" layoutX="30.0" layoutY="137.0" prefHeight="25.0" prefWidth="314.0" stylesheets="@editor/PensumEditorStyles.css" />
+                        <Label layoutX="30.0" layoutY="177.0" prefHeight="25.0" prefWidth="326.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Asignaturas" />
+                        <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="211.0" prefHeight="35.0" prefWidth="707.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Para cargar las asignaturas que utilizaras en tu Pensum busca en la siguente lista el programa academico que contiene dichas asignaturas y oprime doble click (Es posible agregar varios programas academicos)" wrapText="true" />
+                        <TextField fx:id="search" layoutX="27.0" layoutY="258.0" onKeyPressed="#onSearch" prefHeight="25.0" prefWidth="470.0" promptText="Buscar por nombre..." stylesheets="@editor/PensumEditorStyles.css" />
+                        <TableView fx:id="APTable" layoutX="28.0" layoutY="293.0" onMouseClicked="#SelectedAcademicProgram" prefHeight="348.0" prefWidth="710.0">
+                          <columns>
+                            <TableColumn fx:id="Nombre" prefWidth="353.0" text="Nombre" />
+                              <TableColumn fx:id="Tipo" prefWidth="119.0" text="Tipo" />
+                              <TableColumn fx:id="Sede" minWidth="0.0" prefWidth="124.0" text="Sede" />
+                            <TableColumn fx:id="Codigo" prefWidth="112.0" text="Código" />
+                          </columns>
+                        </TableView>
+                        <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="658.0" prefHeight="21.0" prefWidth="707.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Programas academicos y asignaturas obtenidas de:" wrapText="true" />
+                        <Hyperlink alignment="TOP_LEFT" layoutX="303.0" layoutY="656.0" onAction="#openWebsite" prefHeight="13.0" prefWidth="336.0" text="https://programasacademicos.unal.edu.co/" wrapText="true" />
+                        <Label alignment="CENTER" layoutX="29.0" layoutY="687.0" prefHeight="25.0" prefWidth="475.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Programas Academicos Cargados" textAlignment="CENTER" />
+                        <ListView fx:id="APView" layoutX="28.0" layoutY="721.0" prefHeight="338.0" prefWidth="477.0" />
+                        <Button fx:id="ShowAllSubjects" alignment="CENTER" disable="true" layoutX="516.0" layoutY="930.0" mnemonicParsing="false" onAction="#showAllSubjects" prefHeight="43.0" prefWidth="121.0" text="Mostrar todas las asignaturas" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="ShowSubjects" disable="true" layoutX="516.0" layoutY="1033.0" mnemonicParsing="false" onAction="#deleteAPSelected" prefHeight="25.0" prefWidth="121.0" text="Eliminar" />
+                        <Button fx:id="DeleteAP" alignment="CENTER" disable="true" layoutX="516.0" layoutY="982.0" mnemonicParsing="false" onAction="#showSubjects" prefHeight="42.0" prefWidth="121.0" text="Mostrar asignaturas selección" textAlignment="CENTER" wrapText="true" />
+                        <Label layoutX="30.0" layoutY="1090.0" prefHeight="25.0" prefWidth="314.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Pensum" />
+                        <Label layoutX="30.0" layoutY="1121.0" prefHeight="25.0" prefWidth="140.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Estilo Pensum" />
+                        <ComboBox fx:id="style" disable="true" layoutX="139.0" layoutY="1121.0" onAction="#onStyleSelect" prefHeight="25.0" prefWidth="205.0" />
+                        <Label layoutX="30.0" layoutY="1151.0" prefHeight="25.0" prefWidth="140.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Asignar color por" />
+                        <ComboBox fx:id="colorOption" disable="true" layoutX="139.0" layoutY="1151.0" onAction="#onColorOptionSelect" prefHeight="25.0" prefWidth="205.0" />
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="1188.0" prefHeight="25.0" prefWidth="710.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Colores" textAlignment="CENTER" />
+                        <ListView fx:id="colorList" disable="true" fixedCellSize="0.0" layoutX="28.0" layoutY="1218.0" prefHeight="338.0" prefWidth="710.0" />
+                        <Button layoutX="30.0" layoutY="1569.0" mnemonicParsing="false" onAction="#createProject" text="Crear proyecto" AnchorPane.topAnchor="1569.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane prefHeight="582.0" prefWidth="436.0" style="-fx-border-radius: 100;" HBox.hgrow="NEVER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="30.0" prefWidth="469.0" style="-fx-font-family: Roboto; -fx-font-size: 16; -fx-font-weight: Bold;" text="Previsualización estilo Pensum" textAlignment="CENTER" wrapText="true" />
+                  <AnchorPane fx:id="previewPane" layoutX="2.0" layoutY="54.0" prefHeight="520.0" prefWidth="436.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="155.0" layoutX="311.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@editor/subjects/iqstyle/arrow.png" />
+                           </image>
+                        </ImageView>
+                        <Group fx:id="grupo" layoutX="136.0" layoutY="50.0" visible="false">
+                           <children>
+                              <Rectangle fill="#f3f7f6" height="96.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="128.0" />
+                              <Rectangle fx:id="colorRectangle" fill="#996699" height="135.0" layoutX="128.0" stroke="#3d3e3b" strokeType="OUTSIDE" strokeWidth="0.0" width="48.0" />
+                              <Rectangle fill="#002e47" height="37.0" layoutY="98.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="128.0" />
+                              <Label fx:id="creditosLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" prefHeight="116.0" prefWidth="48.0" style="-fx-font-weight: Bold; -fx-font-size: 18;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nombreLabel" contentDisplay="CENTER" layoutX="17.0" prefHeight="98.0" prefWidth="106.0" style="-fx-font-size: 14; -fx-font-family: Roboto;" textFill="#3d3e3b" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="codigoLabel" contentDisplay="CENTER" layoutX="18.0" layoutY="98.0" prefHeight="37.0" prefWidth="108.0" style="-fx-font-size: 14; -fx-font-weight: Bold;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="compoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="0.0" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="grupoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="0.0" textAlignment="CENTER" textFill="#3d3e3b" visible="false" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <ImageView fitHeight="54.0" fitWidth="102.0" layoutX="45.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@editor/subjects/iqstyle/prerequisitos.png" />
+                           </image>
+                        </ImageView>
+                        <Group fx:id="grupo1" layoutX="136.0" layoutY="261.0" visible="false">
+                           <children>
+                              <Rectangle fill="#d1bfad" height="25.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="74.0" />
+                              <Rectangle fill="#d1bfad" height="25.0" layoutX="75.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="49.0" />
+                              <Rectangle fill="#d1bfad" height="25.0" layoutX="125.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="49.0" />
+                              <Rectangle fill="WHITESMOKE" height="65.0" layoutY="26.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="174.0" />
+                              <Rectangle fx:id="colorRectangle1" fill="#e4e4e4" height="44.0" layoutY="92.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="174.0" />
+                              <Rectangle fill="#d1bfad" height="28.0" layoutY="137.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="124.0" />
+                              <Rectangle fill="#d1bfad" height="28.0" layoutX="125.0" layoutY="137.0" smooth="false" stroke="#3d3e3b" strokeType="OUTSIDE" width="49.0" />
+                              <Label fx:id="creditosLabel1" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nombreLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="26.0" prefHeight="65.0" prefWidth="165.0" textAlignment="CENTER" textFill="#3d3e3b" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="codigoLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="138.0" prefHeight="26.0" prefWidth="126.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="compoLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="138.0" prefHeight="26.0" prefWidth="50.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="grupoLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="92.0" prefHeight="45.0" prefWidth="166.0" textAlignment="CENTER" textFill="#3d3e3b" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <ImageView fitHeight="32.0" fitWidth="155.0" layoutX="311.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@editor/subjects/classic/arrow.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="54.0" fitWidth="102.0" layoutX="45.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@editor/subjects/classic/prerequisitos.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
