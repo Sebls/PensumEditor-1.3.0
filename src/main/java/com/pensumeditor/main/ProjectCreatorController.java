@@ -61,8 +61,6 @@ public class ProjectCreatorController implements Initializable {
     @FXML
     private TableView<AcademicProgram> APTable;
     @FXML
-    private TableColumn Codigo;
-    @FXML
     private TableColumn Nombre;
     @FXML
     private TableColumn Sede;
@@ -389,7 +387,7 @@ public class ProjectCreatorController implements Initializable {
             Nombre.setCellValueFactory(new PropertyValueFactory<>("name"));
             Tipo.setCellValueFactory(new PropertyValueFactory<>("type"));
             Sede.setCellValueFactory(new PropertyValueFactory<>("location"));
-            Codigo.setCellValueFactory(new PropertyValueFactory<>("code"));
+            //Codigo.setCellValueFactory(new PropertyValueFactory<>("code"));
             for (AcademicProgram academicProgram : AcademicPrograms) {
                 APTable.getItems().add(academicProgram);
             }

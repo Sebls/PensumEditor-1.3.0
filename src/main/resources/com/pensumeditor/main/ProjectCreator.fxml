@@ -68,8 +68,7 @@
                           <columns>
                             <TableColumn fx:id="Nombre" prefWidth="353.0" text="Nombre" />
                               <TableColumn fx:id="Tipo" prefWidth="119.0" text="Tipo" />
-                              <TableColumn fx:id="Sede" minWidth="0.0" prefWidth="124.0" text="Sede" />
-                            <TableColumn fx:id="Codigo" prefWidth="112.0" text="Código" />
+                              <TableColumn fx:id="Sede" minWidth="0.0" prefWidth="237.0" text="Sede" />
                           </columns>
                         </TableView>
                         <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="658.0" prefHeight="21.0" prefWidth="707.0" style="-fx-font-family: Roboto; -fx-font-size: 12;" text="Programas academicos y asignaturas obtenidas de:" wrapText="true" />

@@ -82,7 +82,7 @@ public class SubjectScraper {
                 Name = Name.substring(0, 1).toUpperCase() + Name.substring(1);
                 String Type = URL.replace("/programa/", "").split("-", 2)[0];
                 String Code = element.text();
-                if (Name.equals("Filologia e idiomas")) {
+                /*if (Name.equals("Filologia e idiomas")) {
                     switch (Integer.valueOf(Code)) {
                         case 2524:
                             Name = "Filología e idiomas - Alemán";
@@ -94,7 +94,7 @@ public class SubjectScraper {
                             Name = "Filología e idiomas - Inglés";
                             break;
                     }
-                }
+                }*/
                 if (Type.contains("pre")) {
                     Type = "Pregrado";
                 } else if (Type.contains("pos")) {
